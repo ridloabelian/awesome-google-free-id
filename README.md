@@ -58,7 +58,7 @@ Kenali dulu batas gratisnya sebelum membangun. Angka di bawah adalah acuan umum 
 - [🗄️ Sheets sebagai Database & API](#️-sheets-sebagai-database--api)
 - [🚀 Web App & CRUD (Apps Script)](#-web-app--crud-apps-script)
 - [🤖 Bot & Chat (Telegram/WA)](#-bot--chat-telegramwa)
-- [🧠 AI & Gemini](#-ai--gemini)
+- [🧠 AI, Gemini & AI Studio](#-ai-gemini--ai-studio)
 - [🔥 Firebase (SaaS Starter)](#-firebase-saas-starter)
 - [🖼️ Drive sebagai CDN & Storage](#️-drive-sebagai-cdn--storage)
 - [📊 Data & Notebook (Colab)](#-data--notebook-colab)
@@ -103,11 +103,22 @@ Jalankan bot Telegram/WhatsApp 24 jam gratis, ditenagai Apps Script sebagai *web
 | [abdiu34567/telesun.js](https://github.com/abdiu34567/telesun.js) ![](https://img.shields.io/github/stars/abdiu34567/telesun.js?style=flat&label=%E2%98%85&color=4285F4) | Framework Telegram Bot API modern yang didesain khusus untuk berjalan di Apps Script. |
 | [ocordova/gas-telegram-bot](https://github.com/ocordova/gas-telegram-bot) ![](https://img.shields.io/github/stars/ocordova/gas-telegram-bot?style=flat&label=%E2%98%85&color=4285F4) | Contoh sederhana Bot Telegram di Apps Script yang membalas dengan kutipan acak. Bagus untuk belajar. |
 
-## 🧠 AI & Gemini
-Manfaatkan Gemini API gratis untuk automasi cerdas langsung dari dalam ekosistem Google.
+## 🧠 AI, Gemini & AI Studio
+Manfaatkan **Google AI Studio** ([aistudio.google.com](https://aistudio.google.com)) — cara tercepat & gratis memakai model Gemini tanpa kartu kredit atau setup GCP. Cukup ambil API key, atau bahkan bangun & deploy aplikasi AI langsung dari *browser* lewat fitur **Build**.
+
+**Kenapa AI Studio jadi senjata Rp 0:**
+- 🔑 **API key gratis** — ~1.500 request/hari (Gemini Flash), tanpa billing.
+- 🏗️ **Build mode** — bikin app AI dari prompt, langsung dapat kode React siap deploy.
+- 🖼️ **Multimodal** — teks, gambar, audio, dokumen, hingga video dalam satu API.
+- 🧩 **Ekspor ke Apps Script / Cloud Run** — hasil bisa langsung disambung ke stack Google lain.
 
 | Nama | Deskripsi |
 |------|-----------|
+| [google-gemini/cookbook](https://github.com/google-gemini/cookbook) ![](https://img.shields.io/github/stars/google-gemini/cookbook?style=flat&label=%E2%98%85&color=4285F4) | **Wajib buka.** Kumpulan contoh & panduan resmi Gemini API dari Google. Ratusan notebook siap pakai (RAG, function calling, vision, dll). |
+| [google-gemini/starter-applets](https://github.com/google-gemini/starter-applets) ![](https://img.shields.io/github/stars/google-gemini/starter-applets?style=flat&label=%E2%98%85&color=4285F4) | Kumpulan *starter app* resmi dari **Google AI Studio** — kode sumber aplikasi yang bisa Anda *remix* dan deploy sendiri. |
+| [google-gemini/live-api-web-console](https://github.com/google-gemini/live-api-web-console) ![](https://img.shields.io/github/stars/google-gemini/live-api-web-console?style=flat&label=%E2%98%85&color=4285F4) | *Starter app* React untuk **Live API** Gemini (suara realtime via websocket). Dasar membangun asisten suara AI gratis. |
+| [google-gemini/example-chat-app](https://github.com/google-gemini/example-chat-app) ![](https://img.shields.io/github/stars/google-gemini/example-chat-app?style=flat&label=%E2%98%85&color=4285F4) | Contoh aplikasi chat resmi untuk memulai dengan Gemini API menggunakan Node.js dan Python. |
+| [googleapis/js-genai](https://github.com/googleapis/js-genai) ![](https://img.shields.io/github/stars/googleapis/js-genai?style=flat&label=%E2%98%85&color=4285F4) | SDK TypeScript/JavaScript resmi untuk Gemini & Vertex AI. Fondasi untuk semua aplikasi AI berbasis JS. |
 | [nghianguyen98/gemini-finance-bot](https://github.com/nghianguyen98/gemini-finance-bot) ![](https://img.shields.io/github/stars/nghianguyen98/gemini-finance-bot?style=flat&label=%E2%98%85&color=4285F4) | Pelacak keuangan pribadi berbasis AI untuk Telegram, dibangun dengan Apps Script + Gemini API + Google Sheets. Contoh *stack* Google Rp 0 yang lengkap. |
 | [fabriceb/GMailAIReplier](https://github.com/fabriceb/GMailAIReplier) ![](https://img.shields.io/github/stars/fabriceb/GMailAIReplier?style=flat&label=%E2%98%85&color=4285F4) | Sekretaris AI untuk Gmail — otomatis membuat draf balasan email Anda. Kompatibel dengan Apps Script. |
 
