@@ -19,6 +19,8 @@ Dibangun untuk membantu solopreneur, operator bisnis, dan *indie hacker* Indones
 
 </div>
 
+> 🗺️ **Bagian dari seri [Stack Nol Rupiah](https://github.com/ridloabelian/awesome-rp0-id)** — peta lengkap bootstrap gratisan Rp 0 untuk indie hacker Indonesia.
+
 > 🔗 **Repo saudara:** Kalau Anda lebih ke *developer* dan butuh *edge/serverless*, lihat juga [**Kitab Cloudflare (awesome-cloudflare-id)**](https://github.com/ridloabelian/awesome-cloudflare-id). Ekosistem Google ini lebih cocok untuk **automasi bisnis & operator non-coder**, sedangkan Cloudflare untuk **web app skalabel**. Keduanya saling melengkapi.
 
 Ekosistem Google punya rahasia yang jarang dimanfaatkan maksimal: **Apps Script**. Ini adalah *runtime* JavaScript gratis milik Google yang bisa jadi *backend*, *cron scheduler*, API, dan *middleware* — semuanya tanpa server, tanpa kartu kredit. Digabung dengan Sheets (database), Firebase (auth & realtime), dan Gemini (AI), Anda bisa membangun sistem bisnis lengkap dengan modal Rp 0.
