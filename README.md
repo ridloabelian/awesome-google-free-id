@@ -19,6 +19,10 @@ Dibangun untuk membantu solopreneur, operator bisnis, dan *indie hacker* Indones
 
 </div>
 
+> **Audit:** Terakhir diverifikasi **2026-07-15**. Kuota dan kebijakan dapat berubah; cek [sumber resmi](https://developers.google.com/apps-script/guides/services/quotas) sebelum implementasi.
+>
+> **Disclaimer:** Proyek komunitas independen. Tidak berafiliasi dengan atau didukung oleh Google LLC. Google, Firebase, Gemini, dan logonya merupakan merek dagang pemiliknya.
+
 > 🗺️ **Bagian dari seri [Stack Nol Rupiah](https://github.com/ridloabelian/awesome-rp0-id)** — peta lengkap bootstrap gratisan Rp 0 untuk indie hacker Indonesia.
 
 > 🔗 **Repo saudara:** Kalau Anda lebih ke *developer* dan butuh *edge/serverless*, lihat juga [**Kitab Cloudflare (awesome-cloudflare-id)**](https://github.com/ridloabelian/awesome-cloudflare-id). Ekosistem Google ini lebih cocok untuk **automasi bisnis & operator non-coder**, sedangkan Cloudflare untuk **web app skalabel**. Keduanya saling melengkapi.
@@ -30,6 +34,9 @@ Ekosistem Google punya rahasia yang jarang dimanfaatkan maksimal: **Apps Script*
 - Membantu automasi bisnis, SaaS, atau produktivitas.
 - *Open-source* dan (idealnya) masih aktif di-*maintain*.
 - Cocok untuk konteks solopreneur & UMKM Indonesia.
+
+
+**Status kurasi:** `Official` = dikelola vendor/organisasi resmi · `Community` = proyek komunitas · `Experimental` = contoh/POC, audit sebelum produksi · `Archived` = read-only/tidak aktif. Lihat [audit katalog lengkap](CATALOG_AUDIT.md) (status, stars, last push, dan sumber README upstream; diverifikasi 2026-07-15).
 
 ---
 
@@ -44,8 +51,8 @@ Kenali dulu batas gratisnya sebelum membangun. Angka di bawah adalah acuan umum 
 | **Gmail (via Apps Script)** | 100 email/hari (akun gratis), 1.500/hari (Workspace) | Untuk notifikasi & email blast ringan. |
 | **Firebase Firestore** | 1 GB storage, 50rb baca & 20rb tulis/hari | NoSQL realtime database (paket Spark). |
 | **Firebase Hosting** | 10 GB storage, 360 MB/hari transfer | Hosting web statis + SSL gratis. |
-| **Firebase Auth** | Unlimited (email/Google), 10rb verifikasi SMS/bln | Sistem login siap pakai. |
-| **Gemini API** | ~1.500 request/hari (Flash), gratis di [AI Studio](https://aistudio.google.com) | AI/LLM gratis dalam kuota harian. |
+| **Firebase Auth** | Kuota gratis tergantung metode login; cek pricing resmi | Sistem login siap pakai. |
+| **Gemini API** | Free tier berbeda menurut model, akun, dan region | Cek [rate limits resmi](https://ai.google.dev/gemini-api/docs/rate-limits) di AI Studio. |
 | **Google Drive** | 15 GB (dibagi dgn Gmail & Photos) | Storage + CDN gambar/file sederhana. |
 | **Looker Studio** | Gratis penuh | Dashboard & visualisasi data. |
 | **Google Colab** | GPU/TPU gratis (sesi terbatas) | Compute untuk eksperimen ML. |
@@ -79,7 +86,7 @@ Kembangkan Apps Script layaknya proyek modern: pakai TypeScript, Git, dan editor
 | [iansan5653/gas-ts-template](https://github.com/iansan5653/gas-ts-template) ![](https://img.shields.io/github/stars/iansan5653/gas-ts-template?style=flat&label=%E2%98%85&color=4285F4) | Template untuk menulis Apps Script menggunakan TypeScript, lengkap dengan *type definitions*. |
 
 ## 🗄️ Sheets sebagai Database & API
-Ubah Google Sheets menjadi database dan REST API tanpa setup server sama sekali.
+Gunakan Google Sheets sebagai penyimpanan data prototipe dengan API terautentikasi. **Bukan database produksi**: validasi input, batasi akses, dan migrasikan saat kebutuhan transaksi/skalabilitas meningkat.
 
 | Nama | Deskripsi |
 |------|-----------|
@@ -109,7 +116,7 @@ Jalankan bot Telegram/WhatsApp 24 jam gratis, ditenagai Apps Script sebagai *web
 Manfaatkan **Google AI Studio** ([aistudio.google.com](https://aistudio.google.com)) — cara tercepat & gratis memakai model Gemini tanpa kartu kredit atau setup GCP. Cukup ambil API key, atau bahkan bangun & deploy aplikasi AI langsung dari *browser* lewat fitur **Build**.
 
 **Kenapa AI Studio jadi senjata Rp 0:**
-- 🔑 **API key gratis** — ~1.500 request/hari (Gemini Flash), tanpa billing.
+- 🔑 **API key & free tier** — kuota berbeda menurut model, akun, dan region; cek rate limit aktif di AI Studio.
 - 🏗️ **Build mode** — bikin app AI dari prompt, langsung dapat kode React siap deploy.
 - 🖼️ **Multimodal** — teks, gambar, audio, dokumen, hingga video dalam satu API.
 - 🧩 **Ekspor ke Apps Script / Cloud Run** — hasil bisa langsung disambung ke stack Google lain.
@@ -136,7 +143,7 @@ Kerangka SaaS siap pakai dengan Auth, database realtime, dan hosting dari Fireba
 | [iamraf/ChatApp](https://github.com/iamraf/ChatApp) ![](https://img.shields.io/github/stars/iamraf/ChatApp?style=flat&label=%E2%98%85&color=4285F4) | Aplikasi chat *open-source* yang ditenagai oleh Firebase. Contoh implementasi realtime database & auth. |
 
 ## 🖼️ Drive sebagai CDN & Storage
-Manfaatkan 15 GB Google Drive sebagai penyimpanan file dan CDN gambar sederhana.
+Manfaatkan 15 GB Google Drive sebagai penyimpanan dan publikasi file sederhana. **Google Drive bukan CDN produksi** dan dapat membatasi akses/traffic.
 
 | Nama | Deskripsi |
 |------|-----------|
@@ -164,11 +171,20 @@ Cuplikan kode Apps Script siap tempel untuk kebutuhan paling umum. Buka [script.
 
 ### 1. Sheets sebagai REST API (GET & POST)
 ```javascript
-// Deploy: Extensions > Apps Script > Deploy > Web App (Execute as: Me, Access: Anyone)
+// Demo terautentikasi API key. Deploy Web App (Execute as: Me, Access: Anyone),
+// tetapi setiap request WAJIB membawa ?key=... yang cocok dengan Script Properties.
+// Untuk data sensitif/produksi gunakan OAuth/IAP/backend dengan kontrol akses lebih kuat.
 const SHEET_ID = 'GANTI_DENGAN_ID_SPREADSHEET';
 const SHEET_NAME = 'Sheet1';
+const API_KEY = PropertiesService.getScriptProperties().getProperty('API_KEY');
+const ALLOWED_FIELDS = ['nama', 'email', 'pesan'];
+
+function authorize(e) {
+  return e.parameter.key && e.parameter.key === API_KEY;
+}
 
 function doGet(e) {
+  if (!authorize(e)) return json({ ok: false, error: 'Unauthorized' });
   const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName(SHEET_NAME);
   const data = sheet.getDataRange().getValues();
   const headers = data.shift();
@@ -178,10 +194,16 @@ function doGet(e) {
 }
 
 function doPost(e) {
-  const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName(SHEET_NAME);
+  if (!authorize(e)) return json({ ok: false, error: 'Unauthorized' });
+  if (!e.postData || e.postData.length > 10_000) return json({ ok: false, error: 'Payload invalid' });
   const body = JSON.parse(e.postData.contents);
-  sheet.appendRow(Object.values(body));
-  return ContentService.createTextOutput(JSON.stringify({ ok: true }))
+  const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName(SHEET_NAME);
+  sheet.appendRow(ALLOWED_FIELDS.map(field => String(body[field] ?? '').slice(0, 1000)));
+  return json({ ok: true });
+}
+
+function json(value) {
+  return ContentService.createTextOutput(JSON.stringify(value))
     .setMimeType(ContentService.MimeType.JSON);
 }
 ```
@@ -226,7 +248,7 @@ function setWebhook() {
 ### 4. Panggil Gemini API (AI) dari Apps Script
 ```javascript
 // Dapatkan API key gratis di https://aistudio.google.com/app/apikey
-const GEMINI_KEY = 'API_KEY_ANDA';
+const GEMINI_KEY = PropertiesService.getScriptProperties().getProperty('GEMINI_API_KEY');
 
 function tanyaGemini(prompt) {
   const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + GEMINI_KEY;
