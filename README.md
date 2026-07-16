@@ -8,7 +8,7 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1000&color=4285F4&center=true&vCenter=true&width=600&lines=Bangun+SaaS+Modal+Rp+0;Apps+Script+%3D+Backend+Gratis;Sheets+%3D+Database+Gratis;Automasi+Bisnis+Tanpa+Server" alt="Typing SVG" />
 </p>
 
-Kumpulan alat, *template*, panduan, dan proyek *open-source* terbaik yang berjalan di atas ekosistem gratis Google — **Apps Script, Google Sheets, Firebase, Gemini API, dan Google Cloud Free Tier**.
+Kumpulan alat, *template*, panduan, dan proyek *open-source* terbaik yang berjalan di atas ekosistem gratis Google — **Apps Script, Google Sheets, Blogger, Firebase, Gemini API, dan Google Cloud Free Tier**.
 Dibangun untuk membantu solopreneur, operator bisnis, dan *indie hacker* Indonesia membangun automasi, CRM, dan produk SaaS mikro dengan biaya server Rp 0.
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
@@ -19,13 +19,13 @@ Dibangun untuk membantu solopreneur, operator bisnis, dan *indie hacker* Indones
 
 </div>
 
-> **Audit:** Terakhir diverifikasi **2026-07-15**. Kuota dan kebijakan dapat berubah; cek [sumber resmi](https://developers.google.com/apps-script/guides/services/quotas) sebelum implementasi.
+> **Audit layanan:** Terakhir diverifikasi **2026-07-16**. Kuota dan kebijakan dapat berubah; cek [kuota Apps Script](https://developers.google.com/apps-script/guides/services/quotas), [Firebase Pricing](https://firebase.google.com/pricing), dan dokumentasi layanan terkait sebelum implementasi.
 >
 > **Disclaimer:** Proyek komunitas independen. Tidak berafiliasi dengan atau didukung oleh Google LLC. Google, Firebase, Gemini, dan logonya merupakan merek dagang pemiliknya.
 
 > 🗺️ **Bagian dari seri [Stack Nol Rupiah](https://github.com/ridloabelian/awesome-rp0-id)** — peta lengkap bootstrap gratisan Rp 0 untuk indie hacker Indonesia.
 
-> 🔗 **Repo saudara:** Kalau Anda lebih ke *developer* dan butuh *edge/serverless*, lihat juga [**Kitab Cloudflare (awesome-cloudflare-id)**](https://github.com/ridloabelian/awesome-cloudflare-id). Ekosistem Google ini lebih cocok untuk **automasi bisnis & operator non-coder**, sedangkan Cloudflare untuk **web app skalabel**. Keduanya saling melengkapi.
+> 🔗 **Seri saudara:** [**Kitab Cloudflare**](https://github.com/ridloabelian/awesome-cloudflare-id) (edge/web) · [**Kitab Supabase**](https://github.com/ridloabelian/awesome-supabase-id) (database/auth) · [**Kitab Telegram**](https://github.com/ridloabelian/awesome-telegram-infra-id) (komunikasi/notifikasi) · [**Kitab Oracle Cloud**](https://github.com/ridloabelian/awesome-oracle-free-id) (compute/self-hosting). **Google melengkapi seri sebagai lapisan automasi bisnis, produktivitas, publishing, dan AI.**
 
 Ekosistem Google punya rahasia yang jarang dimanfaatkan maksimal: **Apps Script**. Ini adalah *runtime* JavaScript gratis milik Google yang bisa jadi *backend*, *cron scheduler*, API, dan *middleware* — semuanya tanpa server, tanpa kartu kredit. Digabung dengan Sheets (database), Firebase (auth & realtime), dan Gemini (AI), Anda bisa membangun sistem bisnis lengkap dengan modal Rp 0.
 
@@ -48,6 +48,7 @@ Kenali dulu batas gratisnya sebelum membangun. Angka di bawah adalah acuan umum 
 |---------|--------------|---------|
 | **Apps Script** | ~20.000 eksekusi/hari, 90 menit runtime/hari | Backend, cron (*trigger*), & API gratis total. |
 | **Google Sheets** | 10 juta sel/spreadsheet | Database gratis untuk data kecil-menengah. |
+| **Blogger** | Hosting blog pada `blogspot.com` tanpa biaya | Custom domain tersedia, tetapi domain dibeli terpisah. Patuhi Content Policy dan Terms. |
 | **Gmail (via Apps Script)** | 100 email/hari (akun gratis), 1.500/hari (Workspace) | Untuk notifikasi & email blast ringan. |
 | **Firebase Firestore** | 1 GB storage, 50rb baca & 20rb tulis/hari | NoSQL realtime database (paket Spark). |
 | **Firebase Hosting** | 10 GB storage, 360 MB/hari transfer | Hosting web statis + SSL gratis. |
@@ -66,6 +67,7 @@ Kenali dulu batas gratisnya sebelum membangun. Angka di bawah adalah acuan umum 
 - [🛠️ Tooling & CLI (clasp)](#️-tooling--cli-clasp)
 - [🗄️ Sheets sebagai Database & API](#️-sheets-sebagai-database--api)
 - [🚀 Web App & CRUD (Apps Script)](#-web-app--crud-apps-script)
+- [✍️ Publishing & Blog (Blogger)](#️-publishing--blog-blogger)
 - [🤖 Bot & Chat (Telegram/WA)](#-bot--chat-telegramwa)
 - [🧠 AI, Gemini & AI Studio](#-ai-gemini--ai-studio)
 - [🔥 Firebase (SaaS Starter)](#-firebase-saas-starter)
@@ -100,6 +102,17 @@ Bangun aplikasi web lengkap (frontend + backend) yang di-*hosting* gratis oleh G
 | Nama | Deskripsi |
 |------|-----------|
 | [danielemiller/fullstack-gas-sheets-react-template](https://github.com/danielemiller/fullstack-gas-sheets-react-template) ![](https://img.shields.io/github/stars/danielemiller/fullstack-gas-sheets-react-template?style=flat&label=%E2%98%85&color=4285F4) | Template *fullstack* untuk aplikasi web: React sebagai *front-end* dan Apps Script + Sheets sebagai *backend*. |
+
+## ✍️ Publishing & Blog (Blogger)
+Blogger cocok untuk blog, dokumentasi publik ringan, microsite konten, dan validasi niche tanpa mengelola server. Gunakan subdomain `blogspot.com` tanpa biaya atau hubungkan domain sendiri. Blogger bukan backend SaaS, database transaksi, maupun pengganti CMS kompleks.
+
+| Nama | Deskripsi |
+|------|-----------|
+| [Blogger](https://www.blogger.com/about/) `Official` | Platform publishing Google dengan posts, pages, comments, themes, statistik dasar, integrasi monetisasi, dan dukungan custom domain. |
+| [Blogger API v3](https://developers.google.com/blogger/docs/3.0/getting_started) `Official` | JSON API resmi untuk membaca atau mengelola blog, post, page, comment, dan user. Data privat dan operasi tulis memerlukan OAuth. |
+| [Blogger Help](https://support.google.com/blogger/) `Official` | Panduan resmi pembuatan blog, akses pembaca, desain, custom domain, komentar, dan kebijakan konten. |
+
+> ⚠️ **Batas penggunaan:** Jangan bergantung pada Blogger untuk aplikasi transaksional atau data sensitif. Ekspor konten secara berkala, gunakan akun terpisah untuk eksperimen, dan patuhi [Blogger Content Policy](https://www.blogger.com/content-policy).
 
 ## 🤖 Bot & Chat (Telegram/WA)
 Jalankan bot Telegram/WhatsApp 24 jam gratis, ditenagai Apps Script sebagai *webhook* — tanpa VPS.
