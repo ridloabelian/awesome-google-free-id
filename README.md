@@ -8,7 +8,7 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1000&color=4285F4&center=true&vCenter=true&width=600&lines=Bangun+SaaS+Modal+Rp+0;Apps+Script+%3D+Backend+Gratis;Sheets+%3D+Database+Gratis;Automasi+Bisnis+Tanpa+Server" alt="Typing SVG" />
 </p>
 
-Kumpulan alat, *template*, panduan, dan proyek *open-source* terbaik yang berjalan di atas ekosistem gratis Google — **Apps Script, Google Sheets, Blogger, Firebase, Gemini API, dan Google Cloud Free Tier**.
+Kumpulan alat, *template*, panduan, dan proyek *open-source* terbaik yang berjalan di atas ekosistem gratis Google — **Apps Script, Google Sheets, Blogger, Firebase, Google AI Studio, Gemini API, dan Google Cloud Free Tier**.
 Dibangun untuk membantu solopreneur, operator bisnis, dan *indie hacker* Indonesia membangun automasi, CRM, dan produk SaaS mikro dengan biaya server Rp 0.
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
@@ -53,7 +53,8 @@ Kenali dulu batas gratisnya sebelum membangun. Angka di bawah adalah acuan umum 
 | **Firebase Firestore** | 1 GB storage, 50rb baca & 20rb tulis/hari | NoSQL realtime database (paket Spark). |
 | **Firebase Hosting** | 10 GB storage, 360 MB/hari transfer | Hosting web statis + SSL gratis. |
 | **Firebase Auth** | Kuota gratis tergantung metode login; cek pricing resmi | Sistem login siap pakai. |
-| **Gemini API** | Free tier berbeda menurut model, akun, dan region | Cek [rate limits resmi](https://ai.google.dev/gemini-api/docs/rate-limits) di AI Studio. |
+| **Google AI Studio** | Workspace browser tersedia tanpa setup GCP | Eksperimen prompt/multimodal, prompt gallery, dan pembuatan API key. Model serta fitur dapat berbeda menurut akun/region. |
+| **Gemini API** | Free tier berbeda menurut model, project, akun, dan region | Akses programatik; cek [pricing](https://ai.google.dev/gemini-api/docs/pricing) dan [rate limits resmi](https://ai.google.dev/gemini-api/docs/rate-limits). |
 | **Google Drive** | 15 GB (dibagi dgn Gmail & Photos) | Storage + CDN gambar/file sederhana. |
 | **Looker Studio** | Gratis penuh | Dashboard & visualisasi data. |
 | **Google Colab** | GPU/TPU gratis (sesi terbatas) | Compute untuk eksperimen ML. |
@@ -126,10 +127,10 @@ Jalankan bot Telegram/WhatsApp 24 jam gratis, ditenagai Apps Script sebagai *web
 | [ocordova/gas-telegram-bot](https://github.com/ocordova/gas-telegram-bot) ![](https://img.shields.io/github/stars/ocordova/gas-telegram-bot?style=flat&label=%E2%98%85&color=4285F4) | Contoh sederhana Bot Telegram di Apps Script yang membalas dengan kutipan acak. Bagus untuk belajar. |
 
 ## 🧠 AI, Gemini & AI Studio
-Manfaatkan **Google AI Studio** ([aistudio.google.com](https://aistudio.google.com)) — cara tercepat & gratis memakai model Gemini tanpa kartu kredit atau setup GCP. Cukup ambil API key, atau bahkan bangun & deploy aplikasi AI langsung dari *browser* lewat fitur **Build**.
+Manfaatkan **Google AI Studio** ([aistudio.google.com](https://aistudio.google.com)) untuk bereksperimen dengan model Gemini dari browser tanpa menyiapkan project GCP secara manual. AI Studio juga menyediakan pembuatan API key dan prompt gallery; ketersediaan model, fitur, dan free tier mengikuti akun serta region.
 
 **Kenapa AI Studio jadi senjata Rp 0:**
-- 🔑 **API key & free tier** — kuota berbeda menurut model, akun, dan region; cek rate limit aktif di AI Studio.
+- 🔑 **API key & free tier** — kuota berbeda menurut model, project, akun, dan region; cek pricing dan rate limit aktif.
 - 🏗️ **Build mode** — bikin app AI dari prompt, langsung dapat kode React siap deploy.
 - 🖼️ **Multimodal** — teks, gambar, audio, dokumen, hingga video dalam satu API.
 - 🧩 **Ekspor ke Apps Script / Cloud Run** — hasil bisa langsung disambung ke stack Google lain.
